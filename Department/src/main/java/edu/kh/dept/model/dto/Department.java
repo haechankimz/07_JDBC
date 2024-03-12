@@ -1,11 +1,11 @@
-package edu.kh.jdbc.model.dto;
+package edu.kh.dept.model.dto;
 
 // DTO 객체 하나가 DEPARTMENT4 테이블의 한 행 데이터를 저장하는 용도
 public class Department {
 	
 	private String deptId;		//부서코드
 	private String deptTitle;	//부서명
-	private String locatoinId;	// 지역코드
+	private String locationId;	// 지역코드
 
 	public Department() {} // 기본생성자
 
@@ -14,7 +14,7 @@ public class Department {
 		super();
 		this.deptId = deptId;
 		this.deptTitle = deptTitle;
-		this.locatoinId = locatoinId;
+		this.locationId = locatoinId;
 	}
 
 	public Department(String deptId, String deptTitle) {
@@ -39,17 +39,17 @@ public class Department {
 		this.deptTitle = deptTitle;
 	}
 
-	public String getLocatoinId() {
-		return locatoinId;
+	public String getLocationId() {
+		return locationId;
 	}
 
-	public void setLocatoinId(String locatoinId) {
-		this.locatoinId = locatoinId;
+	public void setLocationId(String locationId) {
+		this.locationId = locationId;
 	}
 
 	@Override
 	public String toString() {
-		return "Department [deptId=" + deptId + ", deptTitle=" + deptTitle + ", locatoinId=" + locatoinId + "]";
+		return "Department [deptId=" + deptId + ", deptTitle=" + deptTitle + ", locatoinId=" + locationId + "]";
 	}
 	
 	
