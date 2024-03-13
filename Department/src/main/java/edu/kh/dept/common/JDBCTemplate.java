@@ -126,7 +126,7 @@ public class JDBCTemplate {
 	
 	
 	public static void close(ResultSet rs) {
-		// Statement, PreparedStatement 두 객체 close 처리하는 메서드
+		// ResultSet close 처리하는 메서드
 		
 		try {
 			if(rs != null && !rs.isClosed()) rs.close();
