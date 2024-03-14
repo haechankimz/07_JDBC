@@ -17,12 +17,6 @@ public class Department {
 		this.locationId = locatoinId;
 	}
 
-	public Department(String deptId, String deptTitle) {
-		super();
-		this.deptId = deptId;
-		this.deptTitle = deptTitle;
-	}
-
 	public String getDeptId() {
 		return deptId;
 	}
