@@ -34,7 +34,7 @@
 
 	<entry key="searchDepartment">
 		SELECT * FROM DEPARTMENT4
-		WHERE DEPT_ID LIKE '%'||?||'%'
+		WHERE DEPT_TITLE LIKE '%'||?||'%'
 	</entry>
 
 </properties>

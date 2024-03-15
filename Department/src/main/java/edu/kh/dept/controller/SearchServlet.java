@@ -20,17 +20,19 @@ public class SearchServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		try{
-			String keyword = req.getParameter("keyword"); // 검색어
-			
 			DepartmentService service = new DepartmentServiceImpl();
+			
+			String keyword = req.getParameter("keyword"); // 검색어
 			
 			List<Department> deptList = service.searchDepartment(keyword);
 			
-			
-			HttpSession session = req.getSession();
+			// 조회 결과를 request scope에 속성으로 세팅
+			req.setAttribute("deptList", deptList);
 			
 			// forward할 JSP 경로
 			String path = "/WEB-INF/views/search.jsp";
+			
+			// 요청 위임
 			req.getRequestDispatcher(path).forward(req, resp);
 			
 		}catch(Exception e) {
