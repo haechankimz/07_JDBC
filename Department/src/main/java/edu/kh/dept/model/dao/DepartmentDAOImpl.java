@@ -36,7 +36,6 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 			
 			prop.loadFromXML(new FileInputStream(path));
 			
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

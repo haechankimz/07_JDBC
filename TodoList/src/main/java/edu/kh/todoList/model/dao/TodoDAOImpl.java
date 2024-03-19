@@ -36,8 +36,6 @@ public class TodoDAOImpl implements TodoDAO {
 				TodoDAOImpl.class.getResource("/edu/kh/todoList/sql/sql.xml").getPath();
 			prop.loadFromXML(new FileInputStream(path));
 			
-			
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
