@@ -17,24 +17,27 @@ public class searchMusic extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String artist = req.getParameter("artist");
 
+		String message = null;
 		try {
 			
 			MusicService service = new MusicServiceImpl();
 			
-			String artist = req.getParameter("artist");
 			
 			List<Music> musicList = service.searchArtist(artist);
 			
-			req.setAttribute("musicList", musicList);
-			
-			String path = "/WEB-INF/views/search.jsp";
-			
-			
-			
-			
-			
-			
+			if(musicList.isEmpty()) {
+				message = "조회된 내용이 없습니다";
+				req.getSession().setAttribute("message", message);
+				resp.sendRedirect("/");
+			}else {
+				
+				String path = "/WEB-INF/views/search.jsp";
+				
+				req.setAttribute("musicList", musicList);
+				req.getRequestDispatcher(path).forward(req, resp);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();

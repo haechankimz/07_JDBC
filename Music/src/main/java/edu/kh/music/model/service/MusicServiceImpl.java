@@ -82,7 +82,7 @@ public class MusicServiceImpl implements MusicService{
 		
 		close(conn);
 		
-		return null;
+		return musicList;
 	}
 
 	

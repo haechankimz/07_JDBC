@@ -17,6 +17,12 @@
 		WHERE MUSIC_NO = ?
 	</entry>
 
+	<entry key="searchMusic">
+		SELECT MUSIC_NAME, ARTIST
+		FROM MUSIC 
+		WHERE ARTIST LIKE '%' || ? || '%'
+	</entry>
+
 
 
 </properties>

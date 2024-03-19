@@ -16,6 +16,14 @@ public class Music {
 		this.artist = artist;
 		this.comDate = comDate;
 	}
+	
+	
+
+	public Music(String musicName, String artist) {
+		super();
+		this.musicName = musicName;
+		this.artist = artist;
+	}
 
 	public int getMusicNo() {
 		return musicNo;

@@ -118,12 +118,33 @@ public class MusicDAOImpl implements MusicDAO{
 
 		List<Music> musicList = new ArrayList<Music>();
 		
-		
-		
-		
-		
-		
-		return null;
+		try {
+			
+			String sql = prop.getProperty("searchMusic");
+			
+			pstmt  = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, artist);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String musicName = rs.getString("MUSIC_NAME");
+				String artist1 = rs.getString("ARTIST");
+				
+				Music music = new Music(musicName, artist1);
+				
+				musicList.add(music);
+				
+			}
+			
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return musicList;
 	}
 	
 	
